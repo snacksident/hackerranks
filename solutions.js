@@ -1,3 +1,5 @@
+// ***** 4/28/2022 ****
+
 /**
  * NUMBER LINE JUMPS
  */
@@ -38,4 +40,35 @@ const birds = (arr) => {
     }
     return mostBirds
 }
-console.log(birds([1,1,1,2,2,3,4,4,4]))
+// console.log(birds([1,1,1,2,2,3,4,4,4]))
+
+/**
+ * plusminus - find % of
+ */
+function plusMinus(arr) {
+    // Write your code here
+    const hash = {
+        pos: 0,
+        neg: 0,
+        zero: 0
+    }
+    arr.forEach(score=>{
+        console.log(score)
+        if(score == 0){
+            hash.zero++
+        }else if(score >= 1){
+            hash.pos++
+        }else if(score<=1){
+            hash.neg++
+        }
+    })
+    hash.pos = (hash.pos / arr.length).toFixed(6)
+    hash.neg = (hash.neg / arr.length).toFixed(6)
+    hash.zero = (hash.zero / arr.length).toFixed(6)
+    console.log(typeof hash.pos)
+    console.log(hash)
+}   
+plusMinus([-4, 3, -9, 0, 4, 1])
+
+// 6               arr[] size n = 6
+// -4 3 -9 0 4 1   arr = [-4, 3, -9, 0, 4, 1]
