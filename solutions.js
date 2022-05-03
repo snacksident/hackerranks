@@ -47,11 +47,13 @@ const birds = (arr) => {
  */
 function plusMinus(arr) {
     // Write your code here
+    //create hash object to hold data
     const hash = {
         pos: 0,
         neg: 0,
         zero: 0
     }
+    //fill out hash object
     arr.forEach(score=>{
         console.log(score)
         if(score == 0){
@@ -62,13 +64,56 @@ function plusMinus(arr) {
             hash.neg++
         }
     })
+    //break values down into format for problem (6 digits of decimal)
     hash.pos = (hash.pos / arr.length).toFixed(6)
     hash.neg = (hash.neg / arr.length).toFixed(6)
     hash.zero = (hash.zero / arr.length).toFixed(6)
-    console.log(typeof hash.pos)
-    console.log(hash)
+    //log results out in requested format
+    console.log(hash.pos)
+    console.log(hash.neg)
+    console.log(hash.zero)
 }   
-plusMinus([-4, 3, -9, 0, 4, 1])
+// plusMinus([-4, 3, -9, 0, 4, 1])
 
-// 6               arr[] size n = 6
-// -4 3 -9 0 4 1   arr = [-4, 3, -9, 0, 4, 1]
+function timeConversion(s) {
+    // Write your code here
+    //get the first 2 digits representing the hour
+    let hourDigits = parseInt(s.slice(0,2))
+    //get the last 2 digits for am/pm
+    let endDigits = s.slice(s.length-2,s.length)
+    if(endDigits == "PM"){
+        if(hourDigits != 12){
+            hourDigits += 12
+        }
+        if(hourDigits > 24){
+            hourDigits -= 24
+        }
+    }
+    if(endDigits == "AM"){
+        if(hourDigits == 12){
+            hourDigits = "00"
+        }
+    }
+    let strippedString = s.substring(2,s.length-2)
+    console.log(hourDigits.toString() + strippedString)
+    return hourDigits.toString() + strippedString
+}
+
+// timeConversion('06:40:03AM')
+
+//minimax sum
+
+function miniMaxSum(arr) {
+    // Write your code here
+    console.log(Math.max(...arr)) //find largest value in the array
+    console.log(Math.min(...arr)) //find smallest value in the array
+    let index = arr.indexOf(Math.max(...arr)); 
+    let smallArray
+    if (index !== -1) {
+       smallArray = arr.splice(index, 1);
+    }
+    console.log(smallArray)
+    console.log(arr.reduce((a,b)=>a+b,0))
+}
+
+miniMaxSum([1,2,3,4,5])
