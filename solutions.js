@@ -101,7 +101,7 @@ function timeConversion(s) {
 
 // timeConversion('06:40:03AM')
 
-//minimax sum
+//minimax sum - **INCOMPLETE**
 
 function miniMaxSum(arr) {
     // Write your code here
@@ -116,4 +116,10 @@ function miniMaxSum(arr) {
     console.log(arr.reduce((a,b)=>a+b,0))
 }
 
-miniMaxSum([1,2,3,4,5])
+// miniMaxSum([1,2,3,4,5])
+
+//gradingstudents
+
+function gradingStudents(grades){
+    
+}
