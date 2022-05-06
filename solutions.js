@@ -77,26 +77,15 @@ function plusMinus(arr) {
 
 function timeConversion(s) {
     // Write your code here
-    //get the first 2 digits representing the hour
-    let hourDigits = parseInt(s.slice(0,2))
-    //get the last 2 digits for am/pm
-    let endDigits = s.slice(s.length-2,s.length)
-    if(endDigits == "PM"){
-        if(hourDigits != 12){
-            hourDigits += 12
-        }
-        if(hourDigits > 24){
-            hourDigits -= 24
-        }
-    }
-    if(endDigits == "AM"){
-        if(hourDigits == 12){
-            hourDigits = "00"
-        }
-    }
-    let strippedString = s.substring(2,s.length-2)
-    console.log(hourDigits.toString() + strippedString)
-    return hourDigits.toString() + strippedString
+    //if AM and time starts with 12
+        //change 12 to 00, remove AM
+    //elseif AM
+        //remove AM off
+    //elseif PM and starts with 12
+        //remove PM
+    //else
+        //add 12 to first 2 digits, remove P
+
 }
 
 // timeConversion('06:40:03AM')
@@ -105,21 +94,16 @@ function timeConversion(s) {
 
 function miniMaxSum(arr) {
     // Write your code here
-    console.log(Math.max(...arr)) //find largest value in the array
-    console.log(Math.min(...arr)) //find smallest value in the array
-    let index = arr.indexOf(Math.max(...arr)); 
-    let smallArray
-    if (index !== -1) {
-       smallArray = arr.splice(index, 1);
-    }
-    console.log(smallArray)
-    console.log(arr.reduce((a,b)=>a+b,0))
+    let total = arr.reduce((a,b)=>a+b,0)
+    console.log(total - Math.max(...arr), total - Math.min(...arr))
+    // console.log(total - Math.max(...arr))
+
 }
 
-// miniMaxSum([1,2,3,4,5])
+miniMaxSum([1,2,3,4,5])
 
 //gradingstudents
 
 function gradingStudents(grades){
-    
+
 }

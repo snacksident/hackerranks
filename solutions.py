@@ -16,4 +16,4 @@ def timeConversion(s):
     else:
     #     //add 12 to first 2 digits, remove PM
         ans = int(s[:2]) + 12
-        return str(str(ans) + s[2+8])
+        return str(str(ans) + s[2:8])
