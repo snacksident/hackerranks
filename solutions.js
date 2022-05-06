@@ -100,10 +100,24 @@ function miniMaxSum(arr) {
 
 }
 
-miniMaxSum([1,2,3,4,5])
+// miniMaxSum([1,2,3,4,5])
 
-//gradingstudents
-
-function gradingStudents(grades){
-
+//lonely integer
+function lonelyinteger(a) {
+    // Write your code here
+    const hashTable = {}
+    a.forEach(num => {
+        if(hashTable[num]){
+            hashTable[num]++
+        }else(
+            hashTable[num] = 1
+        )
+    })
+    for(const keys in hashTable){
+        if(hashTable[keys] == 1){
+            return keys
+        }
+    }
 }
+
+lonelyinteger([1,2,3,4,3,2,1])
