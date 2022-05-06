@@ -120,4 +120,12 @@ function lonelyinteger(a) {
     }
 }
 
-lonelyinteger([1,2,3,4,3,2,1])
+// lonelyinteger([1,2,3,4,3,2,1])
+
+function diagonalDifference(arr){
+    for(let i = 0; i < arr.length; i++){
+        console.log(arr[i])
+    }
+}
+
+diagonalDifference([ [ 11, 2, 4 ], [ 4, 5, 6 ], [ 10, 8, -12 ] ])
