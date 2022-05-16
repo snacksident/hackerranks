@@ -183,12 +183,29 @@ function pickingNumbers(a){
 
 
 function countApplesAndOranges(s,t,a,b,apples,oranges){
-    console.log(`s: ${s}`)
-    console.log(`s: ${t}`)
-    console.log(`s: ${a}`)
-    console.log(`s: ${b}`)
-    console.log(`s: ${apples}`)
-    console.log(`s: ${oranges}`)
+    //count how many ${apples} and ${oranges} fall between s and t.
+    let samsApples = 0
+    let samsOranges = 0
+    const isInTheYard = (t,s,fruitLocation) =>{
+        if(fruitLocation >= s && fruitLocation <= t){
+            return true
+        }else{
+            return false
+        }
+    }
+    console.log(`apple tree location: ${a}`)
+    apples.forEach(apple=>{
+        if(isInTheYard(t,s,(apple + a))){
+            samsApples++
+        }
+    })
+    oranges.forEach(orange=>{
+        if(isInTheYard(t,s,(orange + b))){
+            samsOranges++
+        }
+    })
+    console.log(samsApples)
+    console.log(samsOranges)
 }
 
 countApplesAndOranges(7,11,5,15,[-2,2,1],[5,-6])
