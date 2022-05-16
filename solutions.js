@@ -179,4 +179,16 @@ function pickingNumbers(a){
     console.log(a)
 }
 
-pickingNumbers([ 4, 6, 5, 3, 3, 1 ])
+// pickingNumbers([ 4, 6, 5, 3, 3, 1 ])
+
+
+function countApplesAndOranges(s,t,a,b,apples,oranges){
+    console.log(`s: ${s}`)
+    console.log(`s: ${t}`)
+    console.log(`s: ${a}`)
+    console.log(`s: ${b}`)
+    console.log(`s: ${apples}`)
+    console.log(`s: ${oranges}`)
+}
+
+countApplesAndOranges(7,11,5,15,[-2,2,1],[5,-6])
