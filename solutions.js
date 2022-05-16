@@ -208,4 +208,10 @@ function countApplesAndOranges(s,t,a,b,apples,oranges){
     console.log(samsOranges)
 }
 
-countApplesAndOranges(7,11,5,15,[-2,2,1],[5,-6])
+// countApplesAndOranges(7,11,5,15,[-2,2,1],[5,-6])
+
+function getTotalX(a,b){
+    console.log(a)
+    console.log(b)
+}
+getTotalX([2,4],[16,32,96])
