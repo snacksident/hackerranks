@@ -17,9 +17,7 @@
  * migratory birds
  */
 const birds = (arr) => {
-    //hash to store counts of birds in
     const hash = {}
-    //loop over array of birds, logging the count in the hash
     arr.forEach(bird=>{
         if(hash[bird]){
             hash[bird]++
@@ -27,15 +25,12 @@ const birds = (arr) => {
             hash[bird] = 1
         }
     })
-    console.log(hash)
     let mostBirds = 0
-    //loop over hash looking for the one that has the most occurances
     for(const bird in hash){
-        console.log(`the bird is currently ${bird}`)
-        //if the hashes value is more than the current highest count of birds
         if(hash[bird] > mostBirds){
-            console.log(`assigning mostBirds to bird = ${mostBirds} is now ${bird}`)
-            mostBirds = bird
+            if(bird > mostBirds){
+                mostBirds = bird
+            }
         }
     }
     return mostBirds
@@ -255,4 +250,23 @@ function divisibleSumPairs(n, k, ar) {
     return count
 }
 
-divisibleSumPairs(6,3,[ 1, 3, 2, 6, 1, 2 ])
+// divisibleSumPairs(6,3,[ 1, 3, 2, 6, 1, 2 ])
+
+function insertionSort2(n, arr) {
+    let swapped = false
+    let currentNum = arr[1]
+    // Write your code here
+    console.log(arr)
+    arr.push(n)
+    console.log(arr)
+    while(!swapped){
+        for(let i = 0; i < arr.length; i++){
+            if(currentNum < arr[i]){
+                console.log(`swap em`)
+                swapped = true
+            }
+        }
+    }
+}
+
+insertionSort2(6,[ 1, 4, 3, 5, 6, 2 ])
