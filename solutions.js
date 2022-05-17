@@ -269,4 +269,13 @@ function insertionSort2(n, arr) {
     }
 }
 
-insertionSort2(6,[ 1, 4, 3, 5, 6, 2 ])
+// insertionSort2(6,[ 1, 4, 3, 5, 6, 2 ])
+
+function hurdleRace(k, height) {
+    console.log(Math.max(...height))
+    if(k > Math.max(...height)){
+        return 0
+    }else{
+        return Math.max(...height) - k
+    }
+}
