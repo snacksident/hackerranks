@@ -228,17 +228,31 @@ function getTotalX(a,b){
 
 function birthday(s, d, m) {
     // Write your code here
-    console.log(`length is is ${s.length} - ${s}, total should be ${d}, month is ${m}`)
     let count = 0
     //break array down into bits of ${m} length - try to find the ones that add up to ${d}
     for(let i = 0; i < s.length; i++){
-        console.log(s.slice(i,(i+m)))
         if(s.slice(i,(i+m)).reduce((a,b)=>a+b) === d){
-            console.log(`found a match`)
             count++
         }
     }
     return count
 }
 
-birthday([1,2,1,3,2],3,2)
+// birthday([1,2,1,3,2],3,2)
+
+function divisibleSumPairs(n, k, ar) {
+    // Write your code here
+    // break array down into pairs
+        //find pairs, that when combined, are divisible by k evenly
+    let count = 0
+    for(let i = 0; i < ar.length; i++){
+        for(let j = 0; j < ar.length; j++){
+            if((i<j) && (ar[i] + ar[j]) % k === 0){
+                count++
+            }
+        }
+    }
+    return count
+}
+
+divisibleSumPairs(6,3,[ 1, 3, 2, 6, 1, 2 ])
