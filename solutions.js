@@ -153,24 +153,26 @@ function countingSort(arr) {
 // countingSort("63 25 73 1 98 73 56 84 86 57 16 83 8 25 81 56 9 53 98 67 99 12 83 89 80 91 39 86 76 85 74 39 25 90 59 10 94 32 44 3 89 30 27 79 46 96 27 32 18 21 92 69 81 40 40 34 68 78 24 87 42 69 23 41 78 22 6 90 99 89 50 30 20 1 43 3 70 95 33 46 44 9 69 48 33 60 65 16 82 67 61 32 21 79 75 75 13 87 70 33".split(' '))
 
 function gradingStudents(grades) {
-    // console.log(grades)
-    //if grade is below 40, do nothing
-    //if 2nd digit is less than 5 and greater than 3, change digit to 5.
-    //if 2nd digit is 8 or 9, change to 0 and increase first digit by 1.
-    grades.forEach(grade=>{
-        let splitGrade = grade.toString().split('')
-        if(grade < 40){
-            //do nothing
-        }else if(splitGrade[1] < 5 && splitGrade[1] >=3){
-            console.log(`found one that needs to be changed: ${grade}`)
-            //change strings back to ints, do the math
-            splitGrade[1] = 5
-            console.log(grade)
-        }else if(splitGrade[1] <= 9 && splitGrade[1] >=8){
-            console.log(`found one that needs to be changed: ${grade}`)
+    grades.forEach((grade, i)=>{
+        if( grade >= 38 ) {
+            if(grade < 40){
+                grades[i] = 40
+            }else{
+                //split into 2 digits
+                //check value of second digit
+                    //if 2nd digit is 3 or 4, change to 5.
+                    //if 2nd digit is 8 or 9, change to 0, 1st digit++
+                gradeString = grade.toString().split()
+                console.log(gradeString)
+                if(gradeString.split()[1] == 3 || gradeString.split()[1] == 4){
+                    gradeString.split(1) = 5
+                } else {
+                    
+                }
+            }
         }
-        console.log(splitGrade.join())
     })
+    console.log(grades)
 }
 
 // gradingStudents([73,67,38,33])
@@ -213,5 +215,30 @@ function countApplesAndOranges(s,t,a,b,apples,oranges){
 function getTotalX(a,b){
     console.log(a)
     console.log(b)
+    let count = 0
+    b.forEach(numB=>{
+        a.forEach(numA=>{
+            if(numB % numA === 0){
+                console.log(`${numA} is divisble by ${numB} !!`)
+            }
+        })
+    })
 }
-getTotalX([2,4],[16,32,96])
+// getTotalX([2,4],[16,32,96])
+
+function birthday(s, d, m) {
+    // Write your code here
+    console.log(`length is is ${s.length} - ${s}, total should be ${d}, month is ${m}`)
+    let count = 0
+    //break array down into bits of ${m} length - try to find the ones that add up to ${d}
+    for(let i = 0; i < s.length; i++){
+        console.log(s.slice(i,(i+m)))
+        if(s.slice(i,(i+m)).reduce((a,b)=>a+b) === d){
+            console.log(`found a match`)
+            count++
+        }
+    }
+    return count
+}
+
+birthday([1,2,1,3,2],3,2)
