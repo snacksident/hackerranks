@@ -279,3 +279,29 @@ function hurdleRace(k, height) {
         return Math.max(...height) - k
     }
 }
+
+// hurdleRace(4,[1,6,3,5,2])
+
+/**
+ * medium challenges
+ */
+
+//extra long factorials
+function extraLongFactorials(n){
+    let total = 0
+    if(n == 0){
+        return 1
+    }else{
+        return n * extraLongFactorials(n - 1)
+    }
+}
+
+extraLongFactorials(25) //expects 15511210043330985984000000
+// console.log(extraLongFactorials(25))
+
+let count = 0
+for(let i = 0; i <= 100; i+=2){
+    count++
+    console.log(i)
+}
+console.log(count)
